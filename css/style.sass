@@ -71,7 +71,7 @@ img
 h1,h2,h3,h4,h5,h6
 	font-size: inherit
 	// font-weight: inherit
-/*----------------------------Start--Project----------------*/
+/*--------------------Start--Project----------------*/
 // ------------1 section--------------------
 .container
 	max-width: 1600px
@@ -80,14 +80,23 @@ h1,h2,h3,h4,h5,h6
 .header
 	&__logo
 		img
+			@media screen and (max-width: 960px)
+				width: 70%
+				height: 70%
+			@media screen and (max-width: 360px)
+				display: none
 		&-second
 			width: 300px
 			height: 1px
 	&__top
 	&__top-lineblack
 		display: flex
-		padding-left: 120px
+		padding-left: 10%
 		background-color: #000
+		@media screen and (max-width: 960px)
+			height: 120px
+		@media screen and (max-width: 360px)
+			display: none
 		span
 			padding-left: 20px
 			font-size: 10px
@@ -101,17 +110,21 @@ h1,h2,h3,h4,h5,h6
 			display: flex
 			-webkit-align-items: center
 			align-items: center
-			padding-right: 100px
+			padding-right: 5%
 			@media screen and (max-width: 1050px)
 				padding-right: 50px
 .header__bottom-search
 	img
 		padding-right: 20px
+		&:hover, :focus
+			width: 45px
 .header__bottom-basket
 	img
 		padding-right: 20px
+		&:hover, :focus
+			width: 55px
 .header__links-box
-	width: 80%
+	width: 100%
 	display: flex
 	justify-content: space-between
 		
@@ -120,18 +133,38 @@ h1,h2,h3,h4,h5,h6
 	justify-content: space-between
 	-webkit-align-items: center
 	align-items: center
-	width: 80%
+	width: 100%
 	height: 65px
 	color: #FFF
 	padding-bottom: 10px
 	text-transform: uppercase
+	span
+		@media screen and (max-width: 1000px)
+			font-size: 8px
+		@media screen and (max-width: 760px)
+			display: none
+	a
+		&:hover, :focus
+			color: #ff6600
 .lineblack-boxs
+	width: 50%
+	display: flex
+	-webkit-justify-content: flex-end
+	justify-content: flex-end
+	padding-right: 3%
+	@media screen and (max-width: 760px)
+		width: 100%
+		display: flex
+		-webkit-justify-content: flex-start
+		justify-content: flex-start
 	a
 		margin: 0 10px
 		color: #FFF
-		font-size: 10px
+		font-size: 8px
+		@media screen and (max-width: 1000px)
+			font-size: 8px
 .menu
-	padding: 0
+	padding: 0 0 0 80px
 	margin: 0
 	height: 63px
 	display: flex
@@ -144,6 +177,7 @@ h1,h2,h3,h4,h5,h6
 	align-items: center
 	font-size: 16px
 	font-weight: bold
+	@media screen and (max-width: 960px)
 	li a
 		-webkit-align-self: center
 		align-self: center
@@ -156,8 +190,12 @@ h1,h2,h3,h4,h5,h6
 		margin: 0 10px
 		color: #000 
 	li a
-		&:hover
-	@media screen and (max-width: 765px) 
+		&:hover, :focus
+			color: #ff6600
+			border-bottom: 2px solid #ff6600
+			@media screen and (max-width: 960px)
+				border: none
+	@media screen and (max-width: 960px)
 		display: flex
 		-webkit-flex-direction: column
 		-ms-flex-direction: column
@@ -191,19 +229,22 @@ h1,h2,h3,h4,h5,h6
 	display: none
 .toogle
 	position: relative
-	@media screen and (max-width: 765px)
+	@media screen and (max-width: 960px)
 		z-index: 99999999999999999
 		clear: both
 		display: block
 		text-align: center
-		font-size: 35px
+		font-size: 62px
 		line-height: 40px
-		width: 100%
-		color: #000
-		background: #fff
-		position: absolute
-		top: 0
+		width: 50px
+		color: #fff
+		background: #ff6600
+		-webkit-border-radius: 8px
+		border-radius: 8px
+		position: fixed
+		top: 10px
 		left: 0
+		border: 1px solid #fff
 		-webkit-transition: all 0.1s leaner
 		-moz-transition: all 0.1s leaner
 		-ms-transition: all 0.1s leaner
@@ -220,19 +261,20 @@ h1,h2,h3,h4,h5,h6
 	margin: 15px auto
 
 #checkbox-menu:checked + label .touch
-	@media screen and (max-width: 765px)
+	@media screen and (max-width: 960px)
 		height: 100%
 		background-color: #000
-		z-index: 999999999999 
+		z-index: 999999999999
+		font-size: 35px
+		padding: 0
 .menu, .touch
-	@media screen and (max-width: 765px)
-		position: absolute
+	@media screen and (max-width: 960px)
+		position: fixed
 		top: 0
 		left: 0
 		display: flex
 		justify-content: center
 		width: 100%
-		
 // -----------------slider style----------------------
 .header__slider-box
 	position: relative
@@ -244,6 +286,7 @@ h1,h2,h3,h4,h5,h6
 	-ms-flex-direction: column
 	flex-direction: column
 .header__slider-item
+	max-height: 800px
 	min-width: 0
 .slick-list
 	overflow: hidden
@@ -290,7 +333,9 @@ h1,h2,h3,h4,h5,h6
 		-webkit-border-radius: 50%
 		border-radius: 50%
 		position: absolute
-		top: 80%
+		top: 86%
+		@media screen and (max-width: 1000px)
+			display: none
 .header__content
 	width: 90%
 	position: absolute
@@ -303,24 +348,55 @@ h1,h2,h3,h4,h5,h6
 	flex-direction: column
 	-webkit-align-items: center
 	align-items: center
+	text-align: center
+	@media screen and (max-width: 760px)
+		top: 30%
 	&-name
 		h1
 			font-size: 40px
 			color: #fff
 			padding-bottom: 35px
+			@media screen and (max-width: 760px)
+				padding: 50px 0 20px 0
+				font-size: 20px
 	&-text
 		h2
 			font-size: 20px
 			color: #fff
 			padding-bottom: 95px
+			@media screen and (max-width: 760px)
+				padding-bottom: 50px
+				font-size: 16px
+			@media screen and (max-width: 540px)
+				padding-bottom: 20px
+			@media screen and (max-width: 370px)
+				display: none
 	&-button
+		color: #ff6600
+		text-transform: uppercase
 		width: 170px
 		height: 50px
-		background: rgba(255, 255, 255 , 0.0)
-		border: 3px solid #fff
+		text-decoration: none
+		text-align: center
+		margin: 30px 0
+		display: block
+		background-image: linear-gradient(to left,transparent,transparent 50%,#ff6600 50%,#ff6600)
+		background-position: 100% 0
+		background-size: 200% 100%
+		transition: all .25s ease-in
+		font: 400 18px tahoma
+		border: 1px solid #fff
 		display: flex
 		-webkit-justify-content: center
 		justify-content: center
+		@media screen and (max-width: 760px)
+			margin: 20px 0 0 0
+		@media screen and (max-width: 540px)
+			margin: 0
+			width: 150px
+			height: 30px
+		&:hover, :focus
+			background-position: 0 0
 		button
 			font-size: 10px
 			color: #fff
@@ -330,9 +406,10 @@ h1,h2,h3,h4,h5,h6
 
 // -----2 section-------------------------
 
-
-.second
+.section__second
 	width: 100%
+	position: relative
+.second
 	position: relative
 	display: flex
 	-webkit-flex-direction: row
@@ -342,8 +419,28 @@ h1,h2,h3,h4,h5,h6
 	justify-content: center
 	top: -40px
 	z-index: 9999
+	@media screen and (max-width: 1350px)
+			zoom: 0.8
+	@media screen and (max-width: 1100px)
+			zoom: 0.7
+	@media screen and (max-width: 960px)
+		display: flex
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+		-webkit-align-items: center
+		align-items: center
+		top: 0
+		zoom: 1.2
+	@media screen and (max-width: 760px)
+		zoom: 0.8
+	@media screen and (max-width: 540px)
+		zoom: 0.6
+	@media screen and (max-width: 360px)
+		zoom: 0.5
 	&__left
 		position: relative
+		
 		&-img
 		&-name
 			position: absolute
@@ -363,6 +460,9 @@ h1,h2,h3,h4,h5,h6
 			button
 				background: rgba(255, 255, 255, 0)
 				color: #FFF
+				&:hover, :focus
+					color: #000
+					font-size: 14px
 			span
 				padding-left: 20px
 		&-button2
@@ -373,6 +473,9 @@ h1,h2,h3,h4,h5,h6
 			button
 				background: rgba(255, 255, 255, 0)
 				color: #FFF
+				&:hover, :focus
+					color: #000
+					font-size: 14px
 			span
 				padding-left: 20px
 	&-right
@@ -391,9 +494,12 @@ h1,h2,h3,h4,h5,h6
 			button
 				background: rgba(255, 255, 255, 0)
 				color: #FFF
+				&:hover, :focus
+					color: #000
+					font-size: 14px
 			span
 				padding-left: 20px
-				
+
 // -----3-4-5-6 section-------------------------
 
 .blog__one
@@ -413,23 +519,58 @@ h1,h2,h3,h4,h5,h6
 		p
 			font-size: 14px
 			color: #aeaeae
+			display: flex
+			-webkit-justify-content: center
+			justify-content: center
+			text-align: center
+			padding: 0 15px
 	&-box
 		display: flex
 		-webkit-flex-direction: row
 		-ms-flex-direction: row
 		flex-direction: row
+		-webkit-flex-wrap: wrap
+		-ms-flex-wrap: wrap
+		flex-wrap: wrap
+		-webkit-align-content: center
+		align-content: center
+		-webkit-justify-content: center
+		justify-content: center
+		@media screen and (max-width: 960px)
+			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
+	&-left
+		img
+			@media screen and (max-width: 615px)
+				display: none
 .blog__two-box
 	display: flex
+	-webkit-flex-wrap: wrap-reverse
+	-ms-flex-wrap: wrap-reverse
+	flex-wrap: wrap-reverse
 	-webkit-flex-direction: row
 	-ms-flex-direction: row
 	flex-direction: row
-	margin: 0 auto
-	width: 1200px
+	-webkit-justify-content: center
+	justify-content: center
+.blog__two-left
+	img
+		@media screen and (max-width: 615px)
+			display: none
 .right__top, .blog__two-righttwo
 	display: flex
 	-webkit-flex-direction: row
 	-ms-flex-direction: row
 	flex-direction: row
+	@media screen and (max-width: 615px)
+		display: flex
+		-webkit-flex-direction: column-reverse
+		-ms-flex-direction: column-reverse
+		flex-direction: column-reverse
+		-webkit-align-items: center
+		align-items: center
 	span
 		width: 295px
 		height: 295px
@@ -439,10 +580,22 @@ h1,h2,h3,h4,h5,h6
 		justify-content: center
 		background-color: #FFF
 		position: relative
+		border: 1px solid #c9dce5
+		@media screen and (max-width: 615px)
+			height: 150px
 	p
 		width: 160px
 		text-align: center
 		padding-bottom: 30px
+	a
+		color: #000
+		&:hover, :focus
+			color: #ff6600
+			-webkit-transition: (0.2s)
+			-moz-transition: (0.2s)
+			-ms-transition: (0.2s)
+			-o-transition: (0.2s)
+			transition: (0.2s)
 	&-corner
 		width: 15px
 		height: 15px
@@ -450,6 +603,8 @@ h1,h2,h3,h4,h5,h6
 		position: absolute
 		left: 285px
 		transform: rotate(45deg)
+		@media screen and (max-width: 615px)
+			display: none
 .righttwo__two1-corner
 	width: 15px
 	height: 15px
@@ -457,6 +612,8 @@ h1,h2,h3,h4,h5,h6
 	position: absolute
 	left: 285px
 	transform: rotate(45deg)
+	@media screen and (max-width: 615px)
+		display: none
 .righttwo__two2-corner
 	width: 15px
 	height: 15px
@@ -464,6 +621,8 @@ h1,h2,h3,h4,h5,h6
 	position: absolute
 	right: 285px
 	transform: rotate(45deg)
+	@media screen and (max-width: 615px)
+		display: none
 .righttwo__two3-corner
 	width: 15px
 	height: 15px
@@ -471,12 +630,30 @@ h1,h2,h3,h4,h5,h6
 	position: absolute
 	right: 288px
 	transform: rotate(45deg)
+	@media screen and (max-width: 615px)
+		display: none
 .right__bottom
 	display: flex
 	-webkit-flex-direction: row
 	-ms-flex-direction: row
 	flex-direction: row
 	position: relative
+	@media screen and (max-width: 615px)
+		display: flex
+		-webkit-flex-direction: column-reverse
+		-ms-flex-direction: column-reverse
+		flex-direction: column-reverse
+		-webkit-align-items: center
+		align-items: center
+	a
+		color: #000
+		&:hover, :focus
+			color: #ff6600
+			-webkit-transition: (0.2s)
+			-moz-transition: (0.2s)
+			-ms-transition: (0.2s)
+			-o-transition: (0.2s)
+			transition: (0.2s)
 	span
 		width: 295px
 		height: 295px
@@ -486,22 +663,43 @@ h1,h2,h3,h4,h5,h6
 		justify-content: center
 		background-color: #FFF
 		position: relative
+		border: 1px solid #c9dce5
+		@media screen and (max-width: 615px)
+			height: 150px
 	p
 		width: 160px
 		padding-bottom: 30px
 		text-align: center
 .blog__button
 	margin: 0 auto
-	width: 1200px
 	text-align: center
 	display: flex
 	-webkit-justify-content: center
 	justify-content: center
 	padding: 75px 0
+	@media screen and (max-width: 1179px)
+		padding: 0
 	button
+		color: #ff6600
+		text-transform: uppercase
 		width: 170px
 		height: 50px
-		border: 2px solid #c4c4c4
+		text-decoration: none
+		text-align: center
+		margin: 30px 0
+		display: block
+		background-image: linear-gradient(to left,transparent,transparent 50%,#ff6600 50%,#ff6600)
+		background-position: 100% 0
+		background-size: 200% 100%
+		transition: all .25s ease-in
+		font: 400 18px tahoma
+		border: 1px solid #c4c4c4
+		display: flex
+		-webkit-justify-content: center
+		justify-content: center
+		&:hover, :focus
+			background-position: 0 0
+			color: #ff6600
 	a
 		font-size: 10px
 		color: #363636
@@ -514,8 +712,23 @@ h1,h2,h3,h4,h5,h6
 	background-color: #E1E1E1
 	display: flex
 	margin: -14px 0
+	&__section-one, &__section-two
+		display: flex
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+		width: 50%
+		-webkit-justify-content: space-around
+		justify-content: space-around
+		@media screen and (max-width: 1179px)
+			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
+			-webkit-align-items: center
+			align-items: center
 	&-items
-		width: 1200px
+		width: 90%
 		margin: 0 auto
 		display: flex
 		-webkit-justify-content: space-around
@@ -524,6 +737,7 @@ h1,h2,h3,h4,h5,h6
 		align-items: center
 		color: #9F9F9F
 		font-size: 15px
+		padding: 0 15px
 	&__adidas
 		width: 100px
 		background: #e1e1e1
@@ -577,6 +791,8 @@ h1,h2,h3,h4,h5,h6
 		transform: rotate(45deg)
 		left: 49%
 		z-index: 10
+		&:hover, :focus
+			background-color: #445760
 		&-arrow
 			cursor: pointer
 			transform: rotate(138deg)
@@ -603,6 +819,11 @@ h1,h2,h3,h4,h5,h6
 			transform: rotate(-230deg)
 			transform-origin: top right
 		button
+.partners__adidas-x, .partners__nb-x,
+.partners__nike-x, .partners__puma-x,
+.partners__ne-x
+	@media screen and (max-width: 1149px)
+		display: none
 
 // --------footer----
 
@@ -617,7 +838,7 @@ h1,h2,h3,h4,h5,h6
 	text-align: center
 	position: relative
 	&-top
-		width: 1200px
+		width: 90%
 		display: flex
 		-webkit-flex-direction: row
 		-ms-flex-direction: row
@@ -631,6 +852,13 @@ h1,h2,h3,h4,h5,h6
 		align-items: center
 		margin: 0 auto
 		padding: 100px 0px 50px 0px
+		@media screen and (max-width: 1150px)
+			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
+		@media screen and (max-width: 460px)
+			padding-top: 50px
 		img
 			margin: 0 40px 0 70px
 		ul
@@ -639,16 +867,23 @@ h1,h2,h3,h4,h5,h6
 			-ms-flex-direction: row
 			flex-direction: row
 			margin: 0 auto
+			@media screen and (max-width: 460px)
+				display: flex
+				-webkit-flex-direction: column
+				-ms-flex-direction: column
+				flex-direction: column
 			a
-				padding: 0 20px 0 20px
+				padding: 0 10px 0 10px
 				color: #868686
 				font-size: 11px
 				font-weight: bold
 				text-align: center
+				&:hover, :focus
+					color: #ff6600
 .top__left
 .top__right
 .fot__box-center
-	width: 1200px
+	width: 90%
 	margin: 0 auto
 	display: flex
 	-webkit-flex-direction: row
@@ -660,11 +895,13 @@ h1,h2,h3,h4,h5,h6
 	align-items: center
 	padding-bottom: 50px
 .center__line-left
-	width: 50%
+	width: 45%
 	height: 1px
 	padding: 0 10px
 	background-color: #868686
 	margin-right: 25px
+	@media screen and (max-width: 460px)
+		display: none
 .center-social
 	ul
 		display: flex
@@ -673,17 +910,24 @@ h1,h2,h3,h4,h5,h6
 		flex-direction: row
 		a
 			padding: 0 15px
-		li
-
+		img
+			&:hover, :focus
+				background-color: #ff6600
+				-webkit-border-radius: 50%
+				border-radius: 50%
 .center-links
 .center__line-right
-	width: 50%
+	width: 40%
 	height: 1px
 	padding: 0 10px
 	background-color: #868686
 	margin-left: 25px
+	@media screen and (max-width: 460px)
+		display: none
 .fot__box-bottom
 	padding-bottom: 150px
+	@media screen and (max-width: 960px)
+		padding-bottom: 50px
 	span
 		font-size: 10px
 		color: #868686
